@@ -27,7 +27,7 @@ export function Contact() {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          access_key: process.env.WEB3FORMS_KEY,
           subject: "New message from your portfolio",
           from_name: "Portfolio contact form",
           name: data.get("name"),
