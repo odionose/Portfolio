@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light mode — warm ivory, near-black ink, a deeper jade-teal accent
+     with a soft tint for backgrounds that need a touch of color. */
+  --surface: #f7f4ee;
+  --surface-raised: #efe8db;
+  --ink: #14151a;
+  --muted: #6e6a62;
+  --line: rgba(20, 21, 26, 0.14);
+  --accent: #2b6a63;
+  --accent-soft: #e2ece7;
+}
+
+.dark {
+  /* Dark mode — deep warm charcoal, warm off-white ink, the same accent
+     lifted to a brighter jade-mint so it still reads clearly at low light. */
+  --surface: #0d0e10;
+  --surface-raised: #1b1c1f;
+  --ink: #f1ece2;
+  --muted: #9c988d;
+  --line: rgba(241, 236, 226, 0.14);
+  --accent: #5fc2b6;
+  --accent-soft: rgba(95, 194, 182, 0.12);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--ink);
+  font-feature-settings: "ss01" 1, "cv01" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--surface);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.rule {
+  border-top: 1px solid var(--line);
+}
+
+.label-meta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
